@@ -1,7 +1,7 @@
 const Escuela = () => {
     return (
         <>
-            <p>Aca va la escuela especial</p>
+            <p>aca va el contenido de la escuela</p>
         </>
     )
 }

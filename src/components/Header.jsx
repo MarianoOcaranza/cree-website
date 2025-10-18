@@ -14,11 +14,11 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-gray-800 min-h-[64px] sticky top-0 text-white">
+        <header className="bg-gray-800 min-h-[64px] sticky top-0 z-999 text-white">
             <nav className="container mx-auto px-4">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo or Brand */}
-                    <Link to="/" className="text-xl font-bold">
+                    <Link to="/#home" className="text-xl font-bold">
                         Logo
                     </Link>
 
@@ -44,7 +44,7 @@ const Header = () => {
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex space-x-4 items-center">
-                        <Link to="/" onClick={() => setInstitucionesOpen(false)} className="hover:text-gray-300">
+                        <Link to="/#home" onClick={() => setInstitucionesOpen(false)} className="hover:text-gray-300">
                             ¿Quiénes somos?
                         </Link>
                         <a href="/#noticias" onClick={() => setInstitucionesOpen(false)} className="hover:text-gray-300">
@@ -102,7 +102,7 @@ const Header = () => {
                     } md:hidden pb-4`}
                 >
                     <div className="flex flex-col items-center gap-4 space-y-2">
-                        <Link to="/" onClick={() => {setInstitucionesOpen(false); setIsOpen(false)}} className="hover:text-gray-300">
+                        <Link to="/#home" onClick={() => {setInstitucionesOpen(false); setIsOpen(false)}} className="hover:text-gray-300">
                             ¿Quiénes somos?
                         </Link>
                         <Link to="/#noticias" onClick={() => {setInstitucionesOpen(false); setIsOpen(false)}} className="hover:text-gray-300">
