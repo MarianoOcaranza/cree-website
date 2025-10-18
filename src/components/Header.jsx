@@ -14,7 +14,7 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-gray-800 sticky top-0 text-white">
+        <header className="bg-gray-800 min-h-[64px] sticky top-0 text-white">
             <nav className="container mx-auto px-4">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo or Brand */}
@@ -44,15 +44,15 @@ const Header = () => {
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex space-x-4 items-center">
-                        <Link to="/" className="hover:text-gray-300">
+                        <Link to="/" onClick={() => setInstitucionesOpen(false)} className="hover:text-gray-300">
                             ¿Quiénes somos?
                         </Link>
-                        <a href="/#noticias" className="hover:text-gray-300">
+                        <a href="/#noticias" onClick={() => setInstitucionesOpen(false)} className="hover:text-gray-300">
                             Noticias
                         </a>
 
                         {/* Nuestras Instituciones dropdown (desktop) */}
-                                        <div className="relative">
+                        <div className="relative">
                             <button
                                 onClick={toggleInstituciones}
                                 className="hover:text-gray-300 flex items-center gap-2"
@@ -72,24 +72,24 @@ const Header = () => {
                                     institucionesOpen ? 'block' : 'hidden'
                                 }`}
                             >
-                                                <div className="flex flex-col py-2">
-                                                    <Link to="/escuela" className="px-4 py-2 hover:bg-gray-700" onClick={() => setInstitucionesOpen(false)}>
-                                                        Escuela especial
-                                                    </Link>
-                                                    <Link to="/cdd" className="px-4 py-2 hover:bg-gray-700" onClick={() => setInstitucionesOpen(false)}>
-                                                        Centro de Día
-                                                    </Link>
-                                                    <Link to="/cfi" className="px-4 py-2 hover:bg-gray-700" onClick={() => setInstitucionesOpen(false)}>
-                                                        Centro de Formación Integral
-                                                    </Link>
-                                                </div>
+                                <div className="flex flex-col py-2">
+                                    <Link to="/escuela" className="px-4 py-2 hover:bg-gray-700" onClick={() => setInstitucionesOpen(false)}>
+                                        Escuela especial
+                                    </Link>
+                                    <Link to="/cdd" className="px-4 py-2 hover:bg-gray-700" onClick={() => setInstitucionesOpen(false)}>
+                                        Centro de Día
+                                    </Link>
+                                    <Link to="/cfi" className="px-4 py-2 hover:bg-gray-700" onClick={() => setInstitucionesOpen(false)}>
+                                        Centro de Formación Integral
+                                    </Link>
+                                </div>
                             </div>
                         </div>
 
-                        <Link to="/#faqs" className="hover:text-gray-300">
+                        <Link to="/#faqs" onClick={() => setInstitucionesOpen(false)} className="hover:text-gray-300">
                             Preguntas Frecuentes
                         </Link>
-                        <Link to="/#contacto" className="hover:text-gray-300">
+                        <Link to="/#contacto" onClick={() => setInstitucionesOpen(false)} className="hover:text-gray-300">
                             Contacto
                         </Link>
                     </div>
@@ -101,11 +101,11 @@ const Header = () => {
                         isOpen ? 'block' : 'hidden'
                     } md:hidden pb-4`}
                 >
-                    <div className="flex flex-col gap-4 items-center space-y-2">
-                        <Link to="/" className="hover:text-gray-300">
+                    <div className="flex flex-col items-center gap-4 space-y-2">
+                        <Link to="/" onClick={() => {setInstitucionesOpen(false); setIsOpen(false)}} className="hover:text-gray-300">
                             ¿Quiénes somos?
                         </Link>
-                        <Link to="/#noticias" className="hover:text-gray-300">
+                        <Link to="/#noticias" onClick={() => {setInstitucionesOpen(false); setIsOpen(false)}} className="hover:text-gray-300">
                             Noticias
                         </Link>
 
@@ -113,7 +113,7 @@ const Header = () => {
                         <div className="w-full px-4">
                             <button
                                 onClick={toggleInstituciones}
-                                className="w-full text-left flex items-center justify-between hover:text-gray-300 py-2"
+                                className="w-full text-left items-center justify-center flex hover:text-gray-300 py-2"
                             >
                                 <span>Nuestras Instituciones</span>
                                 <svg
@@ -126,22 +126,22 @@ const Header = () => {
                                 </svg>
                             </button>
                             <div className={`${institucionesOpen ? 'block' : 'hidden'} flex flex-col mt-2`}>
-                                <Link to="/escuela" className="px-2 py-2 hover:bg-gray-700 rounded" onClick={() => setInstitucionesOpen(false)}>
+                                <Link to="/escuela" onClick={() => {setInstitucionesOpen(false); setIsOpen(false)}} className="px-2 py-2 hover:bg-gray-700 rounded">
                                     Escuela especial
                                 </Link>
-                                <Link to="/cdd" className="px-2 py-2 hover:bg-gray-700 rounded" onClick={() => setInstitucionesOpen(false)}>
+                                <Link to="/cdd" onClick={() => {setInstitucionesOpen(false); setIsOpen(false)}} className="px-2 py-2 hover:bg-gray-700 rounded">
                                     Centro de Día
                                 </Link>
-                                <Link to="/cfi" className="px-2 py-2 hover:bg-gray-700 rounded" onClick={() => setInstitucionesOpen(false)}>
+                                <Link to="/cfi" onClick={() => {setInstitucionesOpen(false); setIsOpen(false)}} className="px-2 py-2 hover:bg-gray-700 rounded">
                                     Centro de Formación Integral
                                 </Link>
                             </div>
                         </div>
 
-                        <Link to="/#faqs" className="hover:text-gray-300">
+                        <Link to="/#faqs" onClick={() => {setInstitucionesOpen(false); setIsOpen(false)}} className="hover:text-gray-300">
                             Preguntas Frecuentes
                         </Link>
-                        <Link to="/#contacto" className="hover:text-gray-300">
+                        <Link to="/#contacto" onClick={() => {setInstitucionesOpen(false); setIsOpen(false)}} className="hover:text-gray-300">
                             Contacto
                         </Link>
                     </div>
